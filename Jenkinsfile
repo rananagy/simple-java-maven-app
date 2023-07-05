@@ -22,7 +22,7 @@
              withSonarQubeEnv('sonarqube') { 
              /*   # you can optionaly use -Dsonar option to provide acess or use sonr-scanner.properiteis file , 
                # use one of them not both */
-               sh "mvn sonar:sonar " 
+               sh "mvn clean verify sonar:sonar" 
                 
              }
             }
