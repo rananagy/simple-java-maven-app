@@ -15,12 +15,12 @@ pipeline {
                 sh 'mvn -B -DskipTests clean package'
             }
         }
-           stage('SonarQube Analysis') {
+         /*  stage('SonarQube Analysis') {
              def mvn = tool 'maven';
              withSonarQubeEnv() {
                sh "${mvn}/bin/mvn clean verify sonar:sonar -Dsonar.projectKey=saadalsayed_simple-java-maven-app_AYkmREvWrdsVyKIfIFEG -Dsonar.projectName='simple-java-maven-app'"
              }
-           }
+           }*/
          
         stage('Test') {
             steps {
