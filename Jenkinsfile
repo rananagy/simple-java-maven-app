@@ -7,7 +7,7 @@ pipeline {
     } **/
     agent any
     tools {
-      maven 'MAVEN' 
+      maven 'maven' 
     }
     stages {
         stage('Build') {
@@ -21,7 +21,7 @@ pipeline {
                sh "${mvn}/bin/mvn clean verify sonar:sonar -Dsonar.projectKey=saadalsayed_simple-java-maven-app_AYkmREvWrdsVyKIfIFEG -Dsonar.projectName='simple-java-maven-app'"
              }
            }
-         }
+         
         stage('Test') {
             steps {
                 sh 'mvn test'
