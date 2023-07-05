@@ -19,8 +19,8 @@ pipeline {
            steps {
              script {
             def scannerHome = tool 'sonarscaner';
-             withSonarQubeEnv() {
-               sh "mvn clean verify sonar:sonar -Dsonar.projectKey=saadalsayed_simple-java-maven-app_AYkmREvWrdsVyKIfIFEG -Dsonar.projectName='simple-java-maven-app'"
+             withSonarQubeEnv('sonarqube') {
+               sh "mvn clean verify sonar:sonar  -Dsonar.projectName='simple-java-maven-app'"
              }
             }
            }
