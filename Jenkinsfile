@@ -16,13 +16,14 @@ pipeline {
             }
         }
           stage('SonarQube Analysis') {
-           
-             
+           steps {
+             script {
              withSonarQubeEnv('sonarqube') {
                sh "${mvn}/bin/mvn clean verify sonar:sonar -Dsonar.projectKey=saadalsayed_simple-java-maven-app_AYkmREvWrdsVyKIfIFEG -Dsonar.projectName='simple-java-maven-app'"
              }
+            }
            }
-         
+          }
         stage('Test') {
             steps {
                 sh 'mvn test'
