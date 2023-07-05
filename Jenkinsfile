@@ -19,8 +19,11 @@ pipeline {
            steps {
              script {
             def scannerHome = tool 'sonarscaner';
-             withSonarQubeEnv('sonarqube') {
-               sh "mvn clean verify sonar:sonar  -Dsonar.projectName='simple-java-maven-app'"
+             withSonarQubeEnv('sonarqube') { 
+                # you can optionaly use -Dsonar option to provide acess or use sonr-scanner.properiteis file , 
+               # use one of them not both
+               sh "mvn clean verify sonar:sonar " 
+                
              }
             }
            }
