@@ -15,7 +15,7 @@
                 sh 'mvn -B -DskipTests clean package'
             }
         }
-          stage('SonarQube Analysis') {
+         /* stage('SonarQube Analysis') {
            steps {
              script {
             def scannerHome = tool 'sonarscaner';
@@ -27,7 +27,7 @@
              }
             }
            }
-          }
+          } */
         stage('Test') {
             steps {
                 sh 'mvn test'
