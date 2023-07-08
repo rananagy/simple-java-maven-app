@@ -15,19 +15,19 @@
                 sh 'mvn -B -DskipTests clean package'
             }
         }
-         /** stage('SonarQube Analysis') {
+         stage('SonarQube Analysis') {
            steps {
              script {
             def scannerHome = tool 'sonarscaner';
              withSonarQubeEnv('sonarqube') { 
-              # you can optionaly use -Dsonar option to provide acess or use sonr-scanner.properiteis file , 
-               # use one of them not both
+            /*  # you can optionaly use -Dsonar option to provide acess or use sonr-scanner.properiteis file , 
+               # use one of them not both */
                sh "mvn clean verify sonar:sonar" 
                 
              }
             }
            }
-          } **/
+          } 
         stage('Test') {
             steps {
                 sh 'mvn test'
